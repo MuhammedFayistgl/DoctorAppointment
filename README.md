@@ -1,8 +1,18 @@
-# React + Vite
+## MERN Stack Doctor Appointment Booking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MERN Stack Doctor Appointment Booking Application using React , Redux Toolkit , AntD , Node , MongoDB 
 
-Currently, two official plugins are available:
+## Features :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Separate User Interfaces for Users, Admins, Doctors
+
+JWT Authentication and Password Hashing
+
+Ant Design Library for UI Components,
+
+Redux Toolkit,
+
+Notifications Functionality for Users, Admin, and Doctors
+
+Manage Users, Doctors, and Appointments from the Admin panel
+
