@@ -67,6 +67,7 @@ router.get(
         success: true,
         data: appointments,
       });
+      
     } catch (error) {
       console.log(error);
       res.status(500).send({
