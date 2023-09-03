@@ -6,6 +6,9 @@ import { toast } from "react-hot-toast";
 import { Table } from "antd";
 import moment from "moment";
 import { AxiosConnection } from "../../utils/AxiosINSTENCE";
+import { CustomTag } from "../../components/CustomTag";
+import { PiPhoneCallFill } from "react-icons/pi";
+import { FcOvertime } from "react-icons/fc";
 
 function DoctorsList() {
 	const [doctors, setDoctors] = useState([]);
@@ -65,6 +68,11 @@ function DoctorsList() {
 		{
 			title: "Phone",
 			dataIndex: "phoneNumber",
+			render: (text, record) => (
+				<span style={{ color: "#0087BA" }}>
+					<PiPhoneCallFill style={{ fontSize: 20 }} /> {record?.phoneNumber}
+				</span>
+			),
 		},
 		{
 			title: "Created At",
@@ -72,11 +80,16 @@ function DoctorsList() {
 			render: (
 				record
 				//  text
-			) => moment(record.createdAt).format("DD-MM-YYYY"),
+			) => <span><FcOvertime style={{ fontSize: 20, marginRight: 8, }}/>{moment(record.createdAt).format("DD-MM-YYYY")}</span> ,
 		},
 		{
 			title: "status",
 			dataIndex: "status",
+			render: (text, record) => (
+				<span>
+					<CustomTag status={record?.status} />
+				</span>
+			),
 		},
 		{
 			title: "Actions",
@@ -91,6 +104,11 @@ function DoctorsList() {
 					{record.status === "approved" && (
 						<h1 className="anchor" onClick={() => changeDoctorStatus(record, "blocked")}>
 							Block
+						</h1>
+					)}
+					{record.status === "blocked" && (
+						<h1 className="anchor" onClick={() => changeDoctorStatus(record, "approved")}>
+							Approve
 						</h1>
 					)}
 				</div>

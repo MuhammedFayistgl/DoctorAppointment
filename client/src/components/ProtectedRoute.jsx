@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 // import React from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
 import { setUser } from "../redux/userSlice";
 import { showLoading, hideLoading } from "../redux/alertsSlice";
 import { AxiosConnection } from "../utils/AxiosINSTENCE";

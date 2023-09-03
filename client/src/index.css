@@ -160,7 +160,7 @@ p {
 	stroke: #2f1b0d;
 	stroke-width: 2px;
 }
-.card {
+.card-card {
 	width: 450px;
 	height: 209px;
 	background-color: #fff;
@@ -172,12 +172,12 @@ p {
 	/* margin: 1.5rem; */
 }
 
-.card .name {
+.card-card .name {
 	text-align: center;
 	font-size: x-large;
 }
 
-.card .additional {
+.card-card .additional {
 	position: absolute;
 
 	width: 150px;
@@ -193,16 +193,16 @@ p {
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 }
-.card.green .additional {
+.card-card.green .additional {
 	background: linear-gradient(#92bca6, #a2ccb6);
 }
 
-.card:hover .additional {
+.card-card:hover .additional {
 	width: 100%;
 	border-radius: 0 5px 5px 0;
 }
 
-.card .additional .user-card {
+.card-card .additional .user-card {
 	width: 150px;
 	height: 100%;
 	position: relative;
@@ -213,7 +213,7 @@ p {
 	justify-content: space-evenly;
 }
 
-.card .additional .user-card::after {
+.card-card .additional .user-card::after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -223,8 +223,8 @@ p {
 	border-left: 2px solid rgba(0, 0, 0, 0.025);
 }
 
-.card .additional .user-card .level,
-.card .additional .user-card .points {
+.card-card .additional .user-card .level,
+.card-card .additional .user-card .points {
 	top: 15%;
 	color: #fff;
 	text-transform: uppercase;
@@ -236,15 +236,15 @@ p {
 	white-space: nowrap;
 }
 
-.card .additional .user-card .points {
+.card-card .additional .user-card .points {
 	top: 85%;
 }
 
-.card .additional .user-card svg {
+.card-card .additional .user-card svg {
 	top: 50%;
 }
 
-.card .additional .more-info {
+.card-card .additional .more-info {
 	width: 300px;
 	float: left;
 	position: absolute;
@@ -252,30 +252,30 @@ p {
 	height: 100%;
 }
 
-.card .additional .more-info h1 {
+.card-card .additional .more-info h1 {
 	color: #fff;
 	margin-bottom: 0;
 }
 
-.card.green .additional .more-info h1 {
+.card-card.green .additional .more-info h1 {
 	color: #224c36;
 }
 
-.card .additional .coords {
+.card-card .additional .coords {
 	margin: 0 1rem;
 	color: #fff;
 	font-size: 1rem;
 }
 
-.card.green .additional .coords {
+.card-card.green .additional .coords {
 	color: #325c46;
 }
 
-.card .additional .coords span + span {
+.card-card .additional .coords span + span {
 	float: right;
 }
 
-.card .additional .stats {
+.card-card .additional .stats {
 	font-size: 2rem;
 	display: flex;
 	position: absolute;
@@ -286,36 +286,36 @@ p {
 	color: #fff;
 }
 
-.card.green .additional .stats {
+.card-card.green .additional .stats {
 	color: #325c46;
 }
 
-.card .additional .stats > div {
+.card-card .additional .stats > div {
 	flex: 1;
 	text-align: center;
 }
 
-.card .additional .stats i {
+.card-card .additional .stats i {
 	display: block;
 }
 
-.card .additional .stats div.title {
+.card-card .additional .stats div.title {
 	font-size: 0.75rem;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
-.card .additional .stats div.value {
+.card-card .additional .stats div.value {
 	font-size: 1.5rem;
 	font-weight: bold;
 	line-height: 1.5rem;
 }
 
-.card .additional .stats div.value.infinity {
+.card-card .additional .stats div.value.infinity {
 	font-size: 2.5rem;
 }
 
-.card .general {
+.card-card .general {
 	width: 300px;
 	height: 100%;
 	position: absolute;
@@ -327,7 +327,7 @@ p {
 	padding-top: 0;
 }
 
-.card .general .more {
+.card-card .general .more {
 	position: absolute;
 	bottom: 1rem;
 	right: 1rem;
@@ -354,4 +354,12 @@ p {
 	background-color: #c7c7c7;
 	border-radius: 5px;
 	border: 0px none #ffffff;
+}
+/* table txt color */
+.ant-table-tbody > tr > td {
+	color: teal;
+}
+
+#root{
+	overflow: hidden;
 }

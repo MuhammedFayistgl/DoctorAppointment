@@ -9,8 +9,8 @@ function Doctor({ doctor }) {
 	const navigate = useNavigate();
 	return (
 		<>
-			<div className=" cursor-pointer">	
-				<div className="card green" onClick={() => navigate(`/book-appointment/${doctor._id}`)}>
+			<div className=" cursor-pointer m-1">	
+				<div className="card-card green" onClick={() => navigate(`/book-appointment/${doctor._id}`)}>
 					<div className="additional">
 						<div className="user-card">
 							<div className="level ">Level 13</div>					
@@ -25,6 +25,7 @@ function Doctor({ doctor }) {
 								<span>Fee per Visit :</span>
 								<span> {doctor.feePerCunsultation}</span>
 							</div>
+							
 							<div className="coords">
 								<span>Timings :</span>
 								<span>
@@ -32,214 +33,11 @@ function Doctor({ doctor }) {
 									{doctor?.timings[0]} - {doctor?.timings[1]}
 								</span>
 							</div>
-							<div className="stats">
-								<div>
-									<div className="title">Awards</div>
-									<i className="fa fa-trophy"></i>
-									<div className="value">2</div>
-								</div>
-								<div>
-									<div className="title">Matches</div>
-									<i className="fa fa-gamepad"></i>
-									<div className="value">27</div>
-								</div>
-								<div>
-									<div className="title">Pals</div>
-									<i className="fa fa-group"></i>
-									<div className="value">123</div>
-								</div>
-								<div>
-									<div className="title">Coffee</div>
-									<i className="fa fa-coffee"></i>
-									<div className="value infinity">∞</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="general">
-						<span className="name">
-							{doctor.firstName} {doctor.lastName}
-						</span>
-						<p>{doctor.address}</p>
-						<div className="coords">
-							<span>
-								<RiSpeakFill style={{ color: "#0087BA", fontSize: 15 }} />
-							</span>
-							<span style={{ marginLeft: 10 }}>English, Hindi, Bengali</span>
 							<div className="coords">
-								<span>Timings :</span>
+								<span></span>
 								<span style={{ color: "#0087BA" }}>
-									{doctor?.timings[0]} - {doctor?.timings[1]}
-								</span>
-							</div>
-						</div>
-						<span style={{ color: "#FC9916" }} className="more">
-							<PiPhoneCallFill style={{ fontSize: 20 }} /> {doctor.phoneNumber}
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className=" cursor-pointer">	
-				<div className="card green" onClick={() => navigate(`/book-appointment/${doctor._id}`)}>
-					<div className="additional">
-						<div className="user-card">
-							<div className="level ">Level 13</div>					
-							<ProfilAvathar/>
-							<div className="points ">5,312 Points</div>
-						</div>
-						<div className="more-info">
-							<span className="name">
-								{doctor.firstName} {doctor.lastName}
-							</span>
-							<div className="coords">
-								<span>Fee per Visit :</span>
-								<span> {doctor.feePerCunsultation}</span>
-							</div>
-							<div className="coords">
-								<span>Timings :</span>
-								<span>
-									{" "}
-									{doctor?.timings[0]} - {doctor?.timings[1]}
-								</span>
-							</div>
-							<div className="stats">
-								<div>
-									<div className="title">Awards</div>
-									<i className="fa fa-trophy"></i>
-									<div className="value">2</div>
-								</div>
-								<div>
-									<div className="title">Matches</div>
-									<i className="fa fa-gamepad"></i>
-									<div className="value">27</div>
-								</div>
-								<div>
-									<div className="title">Pals</div>
-									<i className="fa fa-group"></i>
-									<div className="value">123</div>
-								</div>
-								<div>
-									<div className="title">Coffee</div>
-									<i className="fa fa-coffee"></i>
-									<div className="value infinity">∞</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="general">
-						<span className="name">
-							{doctor.firstName} {doctor.lastName}
-						</span>
-						<p>{doctor.address}</p>
-						<div className="coords">
-							<span>
-								<RiSpeakFill style={{ color: "#0087BA", fontSize: 15 }} />
-							</span>
-							<span style={{ marginLeft: 10 }}>English, Hindi, Bengali</span>
-							<div className="coords">
-								<span>Timings :</span>
-								<span style={{ color: "#0087BA" }}>
-									{doctor?.timings[0]} - {doctor?.timings[1]}
-								</span>
-							</div>
-						</div>
-						<span style={{ color: "#FC9916" }} className="more">
-							<PiPhoneCallFill style={{ fontSize: 20 }} /> {doctor.phoneNumber}
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className=" cursor-pointer">	
-				<div className="card green" onClick={() => navigate(`/book-appointment/${doctor._id}`)}>
-					<div className="additional">
-						<div className="user-card">
-							<div className="level ">Level 13</div>					
-							<ProfilAvathar/>
-							<div className="points ">5,312 Points</div>
-						</div>
-						<div className="more-info">
-							<span className="name">
-								{doctor.firstName} {doctor.lastName}
-							</span>
-							<div className="coords">
-								<span>Fee per Visit :</span>
-								<span> {doctor.feePerCunsultation}</span>
-							</div>
-							<div className="coords">
-								<span>Timings :</span>
-								<span>
-									{" "}
-									{doctor?.timings[0]} - {doctor?.timings[1]}
-								</span>
-							</div>
-							<div className="stats">
-								<div>
-									<div className="title">Awards</div>
-									<i className="fa fa-trophy"></i>
-									<div className="value">2</div>
-								</div>
-								<div>
-									<div className="title">Matches</div>
-									<i className="fa fa-gamepad"></i>
-									<div className="value">27</div>
-								</div>
-								<div>
-									<div className="title">Pals</div>
-									<i className="fa fa-group"></i>
-									<div className="value">123</div>
-								</div>
-								<div>
-									<div className="title">Coffee</div>
-									<i className="fa fa-coffee"></i>
-									<div className="value infinity">∞</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="general">
-						<span className="name">
-							{doctor.firstName} {doctor.lastName}
-						</span>
-						<p>{doctor.address}</p>
-						<div className="coords">
-							<span>
-								<RiSpeakFill style={{ color: "#0087BA", fontSize: 15 }} />
-							</span>
-							<span style={{ marginLeft: 10 }}>English, Hindi, Bengali</span>
-							<div className="coords">
-								<span>Timings :</span>
-								<span style={{ color: "#0087BA" }}>
-									{doctor?.timings[0]} - {doctor?.timings[1]}
-								</span>
-							</div>
-						</div>
-						<span style={{ color: "#FC9916" }} className="more">
-							<PiPhoneCallFill style={{ fontSize: 20 }} /> {doctor.phoneNumber}
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className=" cursor-pointer">	
-				<div className="card green" onClick={() => navigate(`/book-appointment/${doctor._id}`)}>
-					<div className="additional">
-						<div className="user-card">
-							<div className="level ">Level 13</div>					
-							<ProfilAvathar/>
-							<div className="points ">5,312 Points</div>
-						</div>
-						<div className="more-info">
-							<span className="name">
-								{doctor.firstName} {doctor.lastName}
-							</span>
-							<div className="coords">
-								<span>Fee per Visit :</span>
-								<span> {doctor.feePerCunsultation}</span>
-							</div>
-							<div className="coords">
-								<span>Timings :</span>
-								<span>
-									{" "}
-									{doctor?.timings[0]} - {doctor?.timings[1]}
+									
+								<PiPhoneCallFill style={{ fontSize: 20 }} /> {doctor.phoneNumber}
 								</span>
 							</div>
 							<div className="stats">

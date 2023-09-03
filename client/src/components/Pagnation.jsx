@@ -1,10 +1,14 @@
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-const Pagnation = () => {
+
+// eslint-disable-next-line react/prop-types
+const Pagnation = ({length,setpage}) => {
+
+
 	return (
 		<Stack spacing={2}>
-			<Pagination count={10} variant="outlined" shape="rounded" />
+			<Pagination count={length} variant="outlined" shape="rounded" onChange={(e,v)=> setpage(v)} />
 		</Stack>
 	);
 };
