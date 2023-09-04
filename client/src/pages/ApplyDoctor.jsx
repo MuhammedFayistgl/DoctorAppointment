@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import DoctorForm from "../components/DoctorForm";
 import moment from "moment";
 import { AxiosConnection } from "../utils/AxiosINSTENCE";
-
+import {GiStethoscope} from 'react-icons/gi'
 function ApplyDoctor() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
@@ -47,7 +47,7 @@ function ApplyDoctor() {
 
   return (
     <Layout>
-      <h1 className="page-title">Apply Doctor</h1>
+      <h1 className="page-title"> <GiStethoscope/> Apply Doctor</h1>
       <hr />
 
       <DoctorForm onFinish={onFinish} />

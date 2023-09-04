@@ -9,6 +9,7 @@ import { AxiosConnection } from "../../utils/AxiosINSTENCE";
 import { CustomTag } from "../../components/CustomTag";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { FcOvertime } from "react-icons/fc";
+import { GiStethoscope } from "react-icons/gi";
 
 function DoctorsList() {
 	const [doctors, setDoctors] = useState([]);
@@ -117,7 +118,7 @@ function DoctorsList() {
 	];
 	return (
 		<Layout>
-			<h1 className="page-header">Doctors List</h1>
+			<h1 style={{color:'#0087ba'}} className="page-header"><GiStethoscope/> Doctors List</h1>
 			<hr />
 			<Table columns={columns} dataSource={doctors} />
 		</Layout>

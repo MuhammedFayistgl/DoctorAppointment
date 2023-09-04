@@ -8,7 +8,9 @@ import moment from "moment";
 import { AxiosConnection } from "../../utils/AxiosINSTENCE";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { FcOvertime } from "react-icons/fc";
-
+import { GiStethoscope } from "react-icons/gi";
+import { GrUserAdmin } from "react-icons/gr";
+import { BsFillHeartPulseFill } from "react-icons/bs";
 
 function Userslist() {
 	const [users, setUsers] = useState([]);
@@ -38,6 +40,20 @@ function Userslist() {
 		{
 			title: "Name",
 			dataIndex: "name",
+		},
+		{
+			title: "Role",
+			render: (record, text) => (
+				<span>
+					{record?.isAdmin ? (
+						<GrUserAdmin style={{ fontSize: 20, color: "green" }} />
+					) : record?.isDoctor ? (
+						<GiStethoscope />
+					) : (
+						<BsFillHeartPulseFill style={{ fontSize: 20, color: "deeppink" }} />
+					)}
+				</span>
+			),
 		},
 		{
 			title: "Email",
@@ -74,7 +90,7 @@ function Userslist() {
 		<Layout>
 			<h1 className="page-header">Users List</h1>
 			<hr />
-			<Table columns={columns} dataSource={users} />
+			<Table columns={columns} dataSource={users}  />
 		</Layout>
 	);
 }
