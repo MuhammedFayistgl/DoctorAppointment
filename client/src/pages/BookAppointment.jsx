@@ -22,17 +22,9 @@ function BookAppointment() {
 	const getDoctorData = async () => {
 		try {
 			dispatch(showLoading());
-			const response = await AxiosConnection.post(
-				"/api/doctor/get-doctor-info-by-id",
-				{
-					doctorId: params.doctorId,
-				},
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
-			);
+			const response = await AxiosConnection.post("/api/doctor/get-doctor-info-by-id", {
+				doctorId: params.doctorId,
+			});
 
 			dispatch(hideLoading());
 			if (response.data.success) {
@@ -53,11 +45,7 @@ function BookAppointment() {
 					date: date,
 					time: time,
 				},
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
+				
 			);
 			dispatch(hideLoading());
 			if (response.data.success) {
@@ -85,11 +73,7 @@ function BookAppointment() {
 					date: date,
 					time: time,
 				},
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
+				
 			);
 
 			dispatch(hideLoading());

@@ -4,8 +4,7 @@ import "../layout.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Badge } from "antd";
-import { useDispatch } from "react-redux";
-import { setUser } from "../redux/userSlice";
+import Alertdialogs from "./Alertdialogs";
 
 
 function Layout({ children }) {
@@ -14,7 +13,6 @@ function Layout({ children }) {
 
 	const navigate = useNavigate();
 	const location = useLocation();
-	const dispatch = useDispatch()
 	const userMenu = [
 		{
 			name: "Home",
@@ -98,14 +96,9 @@ function Layout({ children }) {
 						})}
 						<div
 							className={`d-flex menu-item `}
-							onClick={() => {
-								localStorage.clear();
-								dispatch(setUser(null));
-								navigate("/login");
-							}}
 						>
-							<i className="ri-logout-circle-line"></i>
-							{!collapsed && <Link to="/login">Logout</Link>}
+						<Alertdialogs coll={collapsed}  />
+						
 						</div>
 					</div>
 				</div>

@@ -17,11 +17,7 @@ function DoctorsList() {
 	const getDoctorsData = async () => {
 		try {
 			dispatch(showLoading());
-			const resposne = await AxiosConnection.get("/api/admin/get-all-doctors", {
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem("token")}`,
-				},
-			});
+			const resposne = await AxiosConnection.get("/api/admin/get-all-doctors");
 			dispatch(hideLoading());
 			if (resposne.data.success) {
 				setDoctors(resposne.data.data);

@@ -12,11 +12,10 @@ function Login() {
 	const onFinish = async (values) => {
 		try {
 			dispatch(showLoading());
-			const response = await AxiosConnection.post("http://localhost:5000/api/user/login", values);
+			const response = await AxiosConnection.post("api/user/login", values);
 			dispatch(hideLoading());
 			if (response.data.success) {
-				toast.success(response.data.message);
-				localStorage.setItem("token", response.data.data);
+				toast.success(response.data.message);	
 				navigate("/");
 			} else {
 				toast.error(response.data.message);

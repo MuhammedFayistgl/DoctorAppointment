@@ -18,11 +18,7 @@ function Userslist() {
 	const getUsersData = async () => {
 		try {
 			dispatch(showLoading());
-			const resposne = await AxiosConnection.get("/api/admin/get-all-users", {
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem("token")}`,
-				},
-			});
+			const resposne = await AxiosConnection.get("/api/admin/get-all-users");
 			dispatch(hideLoading());
 			if (resposne.data.success) {
 				setUsers(resposne.data.data);
@@ -90,7 +86,7 @@ function Userslist() {
 		<Layout>
 			<h1 className="page-header">Users List</h1>
 			<hr />
-			<Table columns={columns} dataSource={users}  />
+			<Table columns={columns} dataSource={users} />
 		</Layout>
 	);
 }

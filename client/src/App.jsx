@@ -1,22 +1,24 @@
 // import React from "react";
 import { Routes, Route, HashRouter } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 // import { Button } from "antd";
-import { Toaster } from "react-hot-toast";
-import Home from "./pages/Home";
 import { useSelector } from "react-redux";
-import ProtectedRoute from "./components/ProtectedRoute";
-import PublicRoute from "./components/PublicRoute";
-import ApplyDoctor from "./pages/ApplyDoctor";
-import Notifications from "./pages/Notifications";
-import Userslist from "./pages/Admin/Userslist";
-import DoctorsList from "./pages/Admin/DoctorsList";
-import Profile from "./pages/Doctor/Profile";
-import BookAppointment from "./pages/BookAppointment";
-import Appointments from "./pages/Appointments";
-import DoctorAppointments from "./pages/Doctor/DoctorAppointments";
-import Userprofile from "./pages/User/Userprofile";
+import { Toaster } from "react-hot-toast";
+import { lazy } from "react";
+//
+const Home = lazy(() => import("./pages/Home"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const ProtectedRoute = lazy(() => import("./components/ProtectedRoute"));
+const PublicRoute = lazy(() => import("./components/PublicRoute"));
+const ApplyDoctor = lazy(() => import("./pages/ApplyDoctor"));
+const Notifications = lazy(() => import("./pages/Notifications"));
+const Userslist = lazy(() => import("./pages/Admin/Userslist"));
+const DoctorsList = lazy(() => import("./pages/Admin/DoctorsList"));
+const Profile = lazy(() => import("./pages/Doctor/Profile"));
+const BookAppointment = lazy(() => import("./pages/BookAppointment"));
+const Appointments = lazy(() => import("./pages/Appointments"));
+const DoctorAppointments = lazy(() => import("./pages/Doctor/DoctorAppointments"));
+const Userprofile = lazy(() => import("./pages/User/Userprofile"));
 
 function App() {
 	const { loading } = useSelector((state) => state.alerts);

@@ -9,7 +9,6 @@ const Appointment = require("../models/appointmentModel");
 const moment = require("moment");
 
 router.post("/register", async (req, res) => {
-  console.log(req.body);
   try {
     const userExists = await User.findOne({ email: req.body.email });
     if (userExists) {
@@ -52,7 +51,7 @@ router.post("/login", async (req, res) => {
         expiresIn: "1d",
       });
       res
-        .status(200)
+        .status(200).cookie('token', token)
         .send({ message: "Login successful", success: true, data: token });
     }
   } catch (error) {

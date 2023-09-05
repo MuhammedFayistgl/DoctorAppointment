@@ -20,9 +20,9 @@ function Home() {
 		try {
 			dispatch(showLoading());
 			const response = await AxiosConnection.get("api/user/get-all-approved-doctors", {
-				headers: {
-					Authorization: "Bearer " + localStorage.getItem("token"),
-				},
+				// headers: {
+				// 	Authorization: "Bearer " + localStorage.getItem("token"),
+				// },
 			});
 			dispatch(hideLoading());
 			if (response.data.success) {
