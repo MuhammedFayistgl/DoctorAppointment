@@ -11,7 +11,7 @@ const path = require("path");
 const  cookieParser = require('cookie-parser')
 
 var corsoption={
-  origin:["http://localhost:3000"], //origin from where you requesting
+  origin:["http://localhost:3000","https://doctorappointment-64iw.onrender.com/"], //origin from where you requesting
   credentials:true
 }
 
