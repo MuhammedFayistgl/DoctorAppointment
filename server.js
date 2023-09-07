@@ -10,12 +10,12 @@ const doctorRoute = require("./routes/doctorsRoute");
 const path = require("path");
 const  cookieParser = require('cookie-parser')
 
-// var corsoption={
-//   origin:"https://muhammedfayistgl.github.io/DoctorAppointment/#/", //origin from where you requesting // "http://localhost:3000",
-//   credentials:true
-// }
+var corsoption={
+  origin:"*", //origin from where you requesting // "http://localhost:3000",
+  credentials:true
+}
 
-app.use(cors())
+app.use(cors(corsoption))
 
 app.use(cookieParser());
 app.use("/api/user", userRoute);
