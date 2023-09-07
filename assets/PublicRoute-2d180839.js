@@ -1,1 +1,0 @@
-import{j as t,N as r}from"./index-de0d719b.js";import{u as s}from"./useCookies-b6097e84.js";function m(o){const[e,i,n]=s(["token"]);return e!=null&&e.token?t.jsx(r,{to:"/"}):o.children}export{m as default};
