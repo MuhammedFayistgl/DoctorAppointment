@@ -10,10 +10,10 @@ const doctorRoute = require("./routes/doctorsRoute");
 const path = require("path");
 const cookieParser = require('cookie-parser')
 
-var corsoption = {
-  origin: "*", //origin from where you requesting // "http://localhost:3000",
-  credentials: true
-}
+// var corsoption = {
+//   origin: "https://doctorappointment-64iw.onrender.com/", //origin from where you requesting // "http://localhost:3000",
+//   credentials: true
+// }
 app.use(function (req, res, next) {
   //Enabling CORS
   res.header("Access-Control-Allow-Origin", "*");
@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept, x-client-key, x-client-token, x-client-secret, Authorization");
   next();
 });
-app.use(cors(corsoption))
+// app.use(cors(corsoption))
 
 app.use(cookieParser());
 app.use("/api/user", userRoute);
