@@ -8,23 +8,15 @@ const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
 const doctorRoute = require("./routes/doctorsRoute");
 const path = require("path");
-const cookieParser = require('cookie-parser')
+const  cookieParser = require('cookie-parser')
 
-app.use(cors({ origin: "https://muhammedfayistgl.github.io", credentials: true }))
-// app.use(function (req, res, next) {
+var corsoption={
+  origin:"https://muhammedfayistgl.github.io", //origin from where you requesting // "http://localhost:3000",
+  credentials:true
+}
 
-//   var allowedDomains = ['http://localhost:3000', 'https://muhammedfayistgl.github.io',];
-//   var origin = req.headers.origin;
-//   if (allowedDomains.indexOf(origin) > -1) {
-//     res.setHeader('Access-Control-Allow-Origin', origin);
-//   }
+app.use(cors(corsoption))
 
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Accept');
-//   res.setHeader('Access-Control-Allow-Credentials', true);
-
-//   next();
-// })
 app.use(cookieParser());
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
