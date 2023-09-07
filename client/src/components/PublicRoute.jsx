@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 
 function PublicRoute(props) {
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  console.log(cookies?.token,'cookies?.token');
   if (cookies?.token) {
     return <Navigate to="/" />;
   } else {

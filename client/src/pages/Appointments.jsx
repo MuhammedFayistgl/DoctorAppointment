@@ -11,7 +11,6 @@ import { PiPhoneCallFill } from "react-icons/pi";
 
 function Appointments() {
 	const [appointments, setAppointments] = useState([]);
-	console.log("appointments", appointments);
 	const dispatch = useDispatch();
 	const getAppointmentsData = async () => {
 		try {

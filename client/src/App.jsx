@@ -4,6 +4,7 @@ import { Routes, Route, HashRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { lazy } from "react";
+import axios from "axios";
 //
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -22,6 +23,7 @@ const Userprofile = lazy(() => import("./pages/User/Userprofile"));
 
 function App() {
 	const { loading } = useSelector((state) => state.alerts);
+	axios.defaults.withCredentials = true;
 	return (
 		<HashRouter>
 			{loading && (
