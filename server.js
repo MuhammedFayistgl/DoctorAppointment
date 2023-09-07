@@ -10,19 +10,20 @@ const doctorRoute = require("./routes/doctorsRoute");
 const path = require("path");
 const cookieParser = require('cookie-parser')
 
-// var corsoption = {
-//   origin: "https://doctorappointment-64iw.onrender.com/", //origin from where you requesting // "http://localhost:3000",
-//   credentials: true
-// }
 app.use(function (req, res, next) {
-  //Enabling CORS
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-  next();
-});
-// app.use(cors(corsoption))
 
+  var allowedDomains = ['http://localhost:3000', 'https://muhammedfayistgl.github.io/DoctorAppointment/',];
+  var origin = req.headers.origin;
+  if (allowedDomains.indexOf(origin) > -1) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Accept');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+
+  next();
+})
 app.use(cookieParser());
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
