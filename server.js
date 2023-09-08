@@ -15,10 +15,10 @@ var corsoption = {
   // credentials:true
   origin: true, credentials: true
 }
+app.use(cookieParser());
 
 app.use(cors(corsoption))
 
-app.use(cookieParser());
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
 app.use("/api/doctor", doctorRoute);
