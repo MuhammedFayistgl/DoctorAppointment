@@ -8,11 +8,12 @@ const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
 const doctorRoute = require("./routes/doctorsRoute");
 const path = require("path");
-const  cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 
-var corsoption={
-  origin:["https://muhammedfayistgl.github.io","http://localhost:3000"], //origin from where you requesting // "http://localhost:3000",
-  credentials:true
+var corsoption = {
+  // origin:["https://muhammedfayistgl.github.io","http://localhost:3000"], //origin from where you requesting // "http://localhost:3000",
+  // credentials:true
+  origin: true, credentials: true
 }
 
 app.use(cors(corsoption))
