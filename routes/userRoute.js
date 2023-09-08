@@ -51,7 +51,7 @@ router.post("/login", async (req, res) => {
         expiresIn: "1d",
       });
       res
-        .status(200).cookie('token', token)  // expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)) 
+        .status(200).cookie('token', token,{expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365))})  // expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)) 
         .send({ message: "Login successful", success: true, data: token });
     }
   } catch (error) {
