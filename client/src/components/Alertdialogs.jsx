@@ -7,8 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/userSlice";
 import { useCookies } from "react-cookie";
+import { FaPowerOff } from "react-icons/fa6";
 
-const Alertdialogs = ({ coll }) => {
+const Alertdialogs = () => {
 	const [open, setOpen] = React.useState(false);
 	const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 	const navigate = useNavigate();
@@ -22,11 +23,11 @@ const Alertdialogs = ({ coll }) => {
 	};
 	return (
 		<>
-			<ButtonToolbar>
-				<i onClick={handleOpen} className="ri-logout-circle-line ">
-					{!coll && <span> Logout</span>}
-				</i>
-			</ButtonToolbar>
+			<a style={{width:'100%',display:'inherit'}} onClick={handleOpen}>
+				{/* <i  className="ri-logout-circle-line "> */}
+				<FaPowerOff  />	
+				{/* </i> */}
+			</a>
 
 			<Modal backdrop="static" role="alertdialog" open={open} onClose={handleClose} size="xs">
 				<Modal.Body>

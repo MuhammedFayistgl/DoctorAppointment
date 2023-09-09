@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 import { Tabs } from "antd";
 // import React from "react";
 import toast from "react-hot-toast";
@@ -56,7 +57,7 @@ function Notifications() {
             <h1 className="anchor" onClick={()=>markAllAsSeen()}>Mark all as seen</h1>
           </div>
 
-          {[...user.unseenNotifications].reverse().map((notification,i) => (
+          {[...user?.unseenNotifications]?.reverse()?.map((notification,i) => (
             <div key={i} className="notification-card p-2 mt-2" onClick={()=>navigate(notification.onClickPath)}>
                 <div className="card-text">{notification.message}</div>
             </div>
