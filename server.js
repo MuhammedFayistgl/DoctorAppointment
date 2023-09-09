@@ -10,29 +10,27 @@ const doctorRoute = require("./routes/doctorsRoute");
 const path = require("path");
 const cookieParser = require('cookie-parser')
 
-// var corsoption = {
-  // origin:["https://muhammedfayistgl.github.io","http://localhost:3000"], //origin from where you requesting // "http://localhost:3000",
-  // credentials:true
-//   origin: true, credentials: true
-// }
+var corsoption = {
+  origin:["https://muhammedfayistgl.github.io","http://localhost:3000"], //origin from where you requesting // "http://localhost:3000",
+}
 app.use(cookieParser());
-
-app.use(cors({
-  origin: true, credentials: true
-}))
+app.use(cors(corsoption,{credentials:true}));
+// app.use(cors({
+//   origin: true, credentials: true
+// }))
 
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
 app.use("/api/doctor", doctorRoute);
 
-// app.use(function (req, res, next) {
-//   res.header('Access-Control-Allow-Origin', req.headers.origin);
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   res.header("Access-Control-Allow-Headers", "*");
-//   res.header('Access-Control-Allow-Credentials', true);
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//   next();
-// });
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  next();
+});
 
 if (process.env.NODE_ENV === "production") {
   app.use("/", express.static("client/build"));
