@@ -13,8 +13,8 @@ module.exports = async (req, res, next) => {
 
     // console.log("req.cookies.token", req.headers["authorization"].split('=')[1]);
     // const token = req.headers["authorization"].split(" ")[1];
-    const token =  req.headers["authorization"].split('=')[1];
-    console.log("token",token);
+    const token = req.headers["authorization"].split('=')[1];
+
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
       if (err) {
         console.log('err', err);
@@ -22,9 +22,7 @@ module.exports = async (req, res, next) => {
           message: "Auth failed token err",
           success: false,
         })
-
       } else {
-        console.log('middlwer pass');
         req.body.userId = decoded.id;
         next();
       }
