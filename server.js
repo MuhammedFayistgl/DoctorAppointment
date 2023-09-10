@@ -14,6 +14,7 @@ const cookieParser = require('cookie-parser')
 //   origin:["https://muhammedfayistgl.github.io","http://localhost:3000"], //origin from where you requesting // "http://localhost:3000",
 // }
 app.use(cookieParser());
+app.set("trust proxy", 1)
 app.use(cors({
   origin: ["http://localhost:3000","https://muhammedfayistgl.github.io"],
   credentials:true,
