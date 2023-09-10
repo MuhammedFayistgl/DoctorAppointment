@@ -50,8 +50,8 @@ router.post("/login", async (req, res) => {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
         expiresIn: "1d",
       });
-      res
-        .status(200).cookie('token', token,)  // { expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)) , httpOnly : false} 
+      return res
+        .cookie('token', token).status(200)  // { expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)) , httpOnly : false} 
         .send({ message: "Login successful", success: true, data: token });
     }
   } catch (error) {

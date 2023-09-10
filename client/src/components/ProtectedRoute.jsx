@@ -19,7 +19,7 @@ function ProtectedRoute(props) {
 			dispatch(showLoading());
 			const response = await AxiosConnection.post(
 				"api/user/get-user-info-by-id",
-				{ token: cookies?.token }
+				// { token: cookies?.token }
 				// {
 				//   headers: {
 				//     Authorization: `Bearer ${localStorage.getItem("token")}`,
