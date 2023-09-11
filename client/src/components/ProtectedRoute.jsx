@@ -9,7 +9,7 @@ import { AxiosConnection } from "../utils/AxiosINSTENCE";
 import { useCookies } from "react-cookie";
 function ProtectedRoute(props) {
 	// eslint-disable-next-line no-unused-vars
-	const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+	const [cookies, setCookie, removeCookie] = useCookies("token");
 
 	const { user } = useSelector((state) => state.user);
 	const dispatch = useDispatch();
