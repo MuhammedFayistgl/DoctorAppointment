@@ -30,11 +30,11 @@ function ProtectedRoute(props) {
 			if (response.data.success) {
 				dispatch(setUser(response.data.data));
 			} else {
-				// removeCookie("token");
+				removeCookie("token");
 				navigate("/login");
 			}
 		} catch (error) {
-			console.log(error);
+			
 			dispatch(hideLoading());
 			removeCookie("token");
 			navigate("/login");
