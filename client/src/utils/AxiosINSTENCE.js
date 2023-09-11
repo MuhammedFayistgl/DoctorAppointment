@@ -8,8 +8,8 @@ export const AxiosConnection = axios.create({
   // mode: "cors",
   withCredentials: true, // should be there
   credentials: 'include', // should be there
-  // headers: {
-  //   Authorization: "Bearer " + document.cookie,
-  // }
+  headers: {
+    Authorization: "Bearer " + document.cookie,
+  }
 }
 )
