@@ -5,16 +5,20 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { hideLoading, showLoading } from "../redux/alertsSlice";
 import { AxiosConnection } from "../utils/AxiosINSTENCE";
+import { useCookies } from "react-cookie";
 
 function Login() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	// eslint-disable-next-line no-unused-vars
+	const [cookies, setCookie, removeCookie] = useCookies("token");
 	const onFinish = async (values) => {
 		try {
 			dispatch(showLoading());
 			const response = await AxiosConnection.post("api/user/login", values);
 			dispatch(hideLoading());
 			if (response.data.success) {
+				setCookie("token",response.data.data)
 				toast.success(response.data.message);	
 				navigate("/");
 			} else {
