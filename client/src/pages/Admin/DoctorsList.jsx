@@ -17,7 +17,7 @@ function DoctorsList() {
 	const getDoctorsData = async () => {
 		try {
 			dispatch(showLoading());
-			const resposne = await AxiosConnection.get("/api/admin/get-all-doctors");
+			const resposne = await AxiosConnection.get("/api/admin/get-all-doctors",{token:document.cookie,});
 			dispatch(hideLoading());
 			if (resposne.data.success) {
 				setDoctors(resposne.data.data);
@@ -32,7 +32,7 @@ function DoctorsList() {
 			dispatch(showLoading());
 			const resposne = await AxiosConnection.post(
 				"/api/admin/change-doctor-account-status",
-				{ doctorId: record._id, userId: record.userId, status: status },
+				{token:document.cookie, doctorId: record._id, userId: record.userId, status: status },
 				{
 					headers: {
 						Authorization: `Bearer ${localStorage.getItem("token")}`,

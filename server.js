@@ -8,7 +8,8 @@ const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
 const doctorRoute = require("./routes/doctorsRoute");
 const path = require("path");
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+
 
 // var corsoption = {
 //   origin:["https://muhammedfayistgl.github.io","http://localhost:3000"], //origin from where you requesting // "http://localhost:3000",
@@ -43,6 +44,8 @@ app.use(function (req, res, next) {
 //     res.sendFile(path.resolve(__dirname, "client/dist/index.html"));
 //   });
 // }
+
+
 const port = process.env.PORT || 5000;
 
 app.get("/", (req, res) => res.send("Hello World!"));

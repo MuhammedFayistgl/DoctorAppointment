@@ -4,7 +4,7 @@ const User = require("../models/userModel");
 const Doctor = require("../models/doctorModel");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-router.get("/get-all-doctors", async (req, res) => {
+router.get("/get-all-doctors", authMiddleware, async (req, res) => {
   try {
     const doctors = await Doctor.find({});
     res.status(200).send({
@@ -22,7 +22,7 @@ router.get("/get-all-doctors", async (req, res) => {
   }
 });
 
-router.get("/get-all-users", async (req, res) => {
+router.get("/get-all-users", authMiddleware, async (req, res) => {
   try {
     const users = await User.find({});
     res.status(200).send({
@@ -42,7 +42,7 @@ router.get("/get-all-users", async (req, res) => {
 
 router.post(
   "/change-doctor-account-status",
-
+  authMiddleware,
   async (req, res) => {
     try {
       const { doctorId, status } = req.body;

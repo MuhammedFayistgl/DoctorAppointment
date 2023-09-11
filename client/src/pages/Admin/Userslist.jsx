@@ -18,7 +18,7 @@ function Userslist() {
 	const getUsersData = async () => {
 		try {
 			dispatch(showLoading());
-			const resposne = await AxiosConnection.get("/api/admin/get-all-users");
+			const resposne = await AxiosConnection.get("/api/admin/get-all-users",{token:document.cookie,});
 			dispatch(hideLoading());
 			if (resposne.data.success) {
 				setUsers(resposne.data.data);

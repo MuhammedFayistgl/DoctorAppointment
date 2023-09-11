@@ -12,7 +12,7 @@ function Register() {
   const onFinish = async (values) => {
     try {
       dispatch(showLoading());
-      const response = await AxiosConnection.post("/api/user/register", values);
+      const response = await AxiosConnection.post("/api/user/register",{token:document.cookie,values} );
       dispatch(hideLoading());
       if (response.data.success) {
         toast.success(response.data.message);

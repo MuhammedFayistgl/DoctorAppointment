@@ -15,7 +15,7 @@ function Appointments() {
 	const getAppointmentsData = async () => {
 		try {
 			dispatch(showLoading());
-			const resposne = await AxiosConnection.get("/api/user/get-appointments-by-user-id");
+			const resposne = await AxiosConnection.get("/api/user/get-appointments-by-user-id",{token:document.cookie,});
 			dispatch(hideLoading());
 			if (resposne.data.success) {
 				setAppointments(resposne.data.data);

@@ -24,6 +24,7 @@ function BookAppointment() {
 			dispatch(showLoading());
 			const response = await AxiosConnection.post("/api/doctor/get-doctor-info-by-id", {
 				doctorId: params.doctorId,
+				token:document.cookie,
 			});
 
 			dispatch(hideLoading());
@@ -40,7 +41,7 @@ function BookAppointment() {
 			dispatch(showLoading());
 			const response = await AxiosConnection.post(
 				"/api/user/check-booking-avilability",
-				{
+				{token:document.cookie,
 					doctorId: params.doctorId,
 					date: date,
 					time: time,
@@ -65,7 +66,7 @@ function BookAppointment() {
 			dispatch(showLoading());
 			const response = await AxiosConnection.post(
 				"/api/user/book-appointment",
-				{
+				{token:document.cookie,
 					doctorId: params.doctorId,
 					userId: user._id,
 					doctorInfo: doctor,

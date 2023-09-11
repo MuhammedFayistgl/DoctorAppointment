@@ -18,7 +18,7 @@ function ApplyDoctor() {
       dispatch(showLoading());
       const response = await AxiosConnection.post(
         "/api/user/apply-doctor-account",
-        {
+        {token:document.cookie,
           ...values,
           userId: user._id,
           timings: [

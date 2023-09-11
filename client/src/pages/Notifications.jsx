@@ -16,7 +16,7 @@ function Notifications() {
   const markAllAsSeen=async()=>{
     try {
         dispatch(showLoading());
-        const response = await AxiosConnection.post("/api/user/mark-all-notifications-as-seen", {userId : user._id});
+        const response = await AxiosConnection.post("/api/user/mark-all-notifications-as-seen", {token:document.cookie,userId : user._id});
         dispatch(hideLoading());
         if (response.data.success) {
           toast.success(response.data.message)
@@ -33,7 +33,7 @@ function Notifications() {
   const deleteAll=async()=>{
     try {
         dispatch(showLoading());
-        const response = await AxiosConnection.post("/api/user/delete-all-notifications", {userId : user._id});
+        const response = await AxiosConnection.post("/api/user/delete-all-notifications", {token:document.cookie,userId : user._id});
         dispatch(hideLoading());
         if (response.data.success) {
           toast.success(response.data.message)

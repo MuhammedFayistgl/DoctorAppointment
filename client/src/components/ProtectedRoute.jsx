@@ -25,6 +25,7 @@ function ProtectedRoute(props) {
 				//     Authorization: `Bearer ${localStorage.getItem("token")}`,
 				//   },
 				// }
+				{token:document.cookie,}
 			);
 			dispatch(hideLoading());
 			if (response.data.success) {
@@ -37,7 +38,7 @@ function ProtectedRoute(props) {
 			
 			dispatch(hideLoading());
 			removeCookie("token");
-			navigate("/login");
+			// navigate("/login");
 		}
 	};
 

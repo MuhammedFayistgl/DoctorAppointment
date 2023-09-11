@@ -13,7 +13,7 @@ function DoctorAppointments() {
 	const getAppointmentsData = async () => {
 		try {
 			dispatch(showLoading());
-			const resposne = await AxiosConnection.get("/api/doctor/get-appointments-by-doctor-id");
+			const resposne = await AxiosConnection.get("/api/doctor/get-appointments-by-doctor-id",{token:document.cookie,});
 			dispatch(hideLoading());
 			if (resposne.data.success) {
 				setAppointments(resposne.data.data);
@@ -29,6 +29,7 @@ function DoctorAppointments() {
 			const resposne = await AxiosConnection.post("/api/doctor/change-appointment-status", {
 				appointmentId: record._id,
 				status: status,
+				token:document.cookie,
 			});
 			dispatch(hideLoading());
 			if (resposne.data.success) {

@@ -19,6 +19,7 @@ function Profile() {
 		try {
 			dispatch(showLoading());
 			const response = await AxiosConnection.post("/api/doctor/update-doctor-profile", {
+				token:document.cookie,
 				...values,
 				userId: user._id,
 				timings: [moment(values.timings[0]).format("HH:mm"), moment(values.timings[1]).format("HH:mm")],
@@ -43,12 +44,13 @@ function Profile() {
 				"/api/doctor/get-doctor-info-by-user-id",
 				{
 					userId: params.userId,
+					token:document.cookie,
 				},
-				{
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-				}
+				// {
+				// 	headers: {
+				// 		Authorization: `Bearer ${localStorage.getItem("token")}`,
+				// 	},
+				// }
 			);
 
 			dispatch(hideLoading());
