@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
         expiresIn: "1d",
       });
       return res
-        .cookie('token', token, { httpOnly: false, path: '/', maxAge: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)) }).status(200)  // { expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)) , httpOnly : false} 
+        .cookie('token', token, { httpOnly: false, path: '/', maxAge: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)),    withCredentials: true,   }).status(200)  // { expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365)) , httpOnly : false} 
         .send({ message: "Login successful", success: true, data: token });
     }
   } catch (error) {
