@@ -1,0 +1,1 @@
+import{o as e}from"./index-feacd9d3.js";const t=e.create({baseURL:"https://doctorappointment-qjkq.onrender.com",withCredentials:!0,credentials:"include",headers:{Authorization:`Bearer ${document==null?void 0:document.cookie}`}});export{t as A};
