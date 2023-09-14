@@ -31,14 +31,14 @@ function ProtectedRoute(props) {
 			if (response.data.success) {
 				dispatch(setUser(response.data.data));
 			} else {
-				// removeCookie("token");
+				removeCookie("token");
 				navigate("/login");
 			}
 		} catch (error) {
 			
 			dispatch(hideLoading());
-			// removeCookie("token");
-			// navigate("/login");
+			removeCookie("token");
+			navigate("/login");
 		}
 	};
 

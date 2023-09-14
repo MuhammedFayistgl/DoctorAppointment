@@ -16,7 +16,7 @@ const Alertdialogs = () => {
 	const dispatch = useDispatch();
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => {
-		removeCookie("token", { path: "/" });
+		removeCookie("token", { path: "/DoctorAppointment" });
 		dispatch(setUser(null));
 		navigate("/login");
 		setOpen(false);
