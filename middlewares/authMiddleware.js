@@ -21,6 +21,8 @@ module.exports = async (req, res, next) => {
 		// const token = req.headers["authorization"].split('=')[1];
 		// console.log('token', token);
 		// console.log("token", req.body.userId.split('=')[1]);
+		
+		console.log(req.headers);
 		const token = req.headers["authorization"].split("=")[1];
 		jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
 			if (err) {
