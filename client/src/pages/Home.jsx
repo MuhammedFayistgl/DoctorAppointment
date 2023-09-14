@@ -19,7 +19,7 @@ function Home() {
 	const getData = async () => {
 		try {
 			dispatch(showLoading());
-			const response = await AxiosConnection.get("api/user/get-all-approved-doctors",{token:document.cookie,});
+			const response = await AxiosConnection.get("api/user/get-all-approved-doctors");
 			dispatch(hideLoading());
 			if (response.data.success) {
 				setDoctors(response.data.data);

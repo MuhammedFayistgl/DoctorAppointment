@@ -14,7 +14,7 @@ const cookieParser = require('cookie-parser');
 //   origin:["https://muhammedfayistgl.github.io","http://localhost:3000"], //origin from where you requesting // "http://localhost:3000",
 // }
 app.use(cookieParser());
-app.set("trust proxy", 1)
+// app.set("trust proxy", 1)
 app.use(cors({
   origin: ["http://localhost:3000","https://muhammedfayistgl.github.io"],
   credentials:true,
@@ -23,9 +23,6 @@ app.use(cors({
 //   origin: true, credentials: true
 // }))
 
-app.use("/api/user", userRoute);
-app.use("/api/admin", adminRoute);
-app.use("/api/doctor", doctorRoute);
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -36,6 +33,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use("/api/user", userRoute);
+app.use("/api/admin", adminRoute);
+app.use("/api/doctor", doctorRoute);
 // if (process.env.NODE_ENV === "production") {
 //   app.use("/", express.static("client/build"));
 

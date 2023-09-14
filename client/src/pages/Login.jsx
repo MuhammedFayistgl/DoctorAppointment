@@ -15,7 +15,7 @@ function Login() {
 	const onFinish = async (values) => {
 		try {
 			dispatch(showLoading());
-			const response = await AxiosConnection.post("api/user/login",{token:document.cookie,values} );
+			const response = await AxiosConnection.post("api/user/login",values );
 			dispatch(hideLoading());
 			if (response.data.success) {
 				setCookie("token",response.data.data)

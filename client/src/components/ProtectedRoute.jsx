@@ -18,26 +18,26 @@ function ProtectedRoute(props) {
 		try {
 			dispatch(showLoading());
 			const response = await AxiosConnection.post(
-				"api/user/get-user-info-by-id",
+				"/api/user/get-user-info-by-id",
 				// { token: cookies?.token }
 				// {
 				//   headers: {
 				//     Authorization: `Bearer ${localStorage.getItem("token")}`,
 				//   },
 				// }
-				{token:document.cookie,}
+			
 			);
 			dispatch(hideLoading());
 			if (response.data.success) {
 				dispatch(setUser(response.data.data));
 			} else {
-				removeCookie("token");
+				// removeCookie("token");
 				navigate("/login");
 			}
 		} catch (error) {
 			
 			dispatch(hideLoading());
-			removeCookie("token");
+			// removeCookie("token");
 			// navigate("/login");
 		}
 	};
