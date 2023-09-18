@@ -1,0 +1,1 @@
+import{o as t,k as n,N as s}from"./index-4b0470dd.js";function a(o){const[e,r,i]=t(["token"]);return console.log(e==null?void 0:e.token,"cookies?.token"),e!=null&&e.token?n.jsx(s,{to:"/"}):o.children}export{a as default};
